@@ -1,0 +1,35 @@
+nav {
+    background-color: aqua;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 70px;
+    width: 67px;
+    padding-left: 50px;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+nav ul li {
+    width: 52.76px;
+    height: 26.67px;
+    margin: 8px 13px 8px 13px;
+    padding: 0 2px 0 2px;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+
+}
+
+nav ul li a:hover {
+    color: grey;
+}
