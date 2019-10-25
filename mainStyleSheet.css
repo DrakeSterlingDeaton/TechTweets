@@ -52,7 +52,13 @@ main {
 /* Footer Controller */
 footer {
     background-color: #22211f;
-    font-family: 'Libre Franklin', 'sans-serif' ;
+    font-family: 'Libre Franklin', 'sans-serif';
+}
+
+footer hr {
+    border: #333 solid 1px;
+    width: 85%;
+    align-content: center;
 }
 
 footer ul {
@@ -79,4 +85,19 @@ footer .footender li {
     display: inline-block;
     float: left;
     padding: 10px 16px;
+}
+
+/*Sponsor logos controls*/
+footer .sponsorImages img {
+    height: 65px;
+    width: 128px;
+    margin-top: 55px;
+    vertical-align: top;
+    margin-bottom: 50px;
+}
+
+footer .sponsorImages #QAAImage {
+    height: 95px;
+    width: 135px;
+
 }
