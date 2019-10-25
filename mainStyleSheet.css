@@ -46,6 +46,7 @@ main {
 /* Footer Controller */
 footer {
     background-color: #22211f;
+    font-family: 'Libre Franklin', 'sans-serif' ;
 }
 
 footer ul {
@@ -56,11 +57,11 @@ footer ul {
 }
 
 footer ul li, h3 {
-    padding: 14px 16px;
+    padding: 7px 5px;
 }
 
 footer .footender li {
     display: inline-block;
     float: left;
-    padding: 14px 16px;
+    padding: 10px 16px;
 }
