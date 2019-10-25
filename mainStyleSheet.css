@@ -38,3 +38,8 @@ nav ul li a {
 nav ul li a:hover {
     color: grey;
 }
+
+main {
+    padding-top: 110px;
+}
+

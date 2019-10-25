@@ -1,0 +1,39 @@
+main {
+    background-color: grey;
+    width: 75%;
+    height: 1000px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#introduction {
+
+}
+
+#projectsOuterBox {
+    background-color: blue;
+    width: 100%;
+}
+
+#projectOuterBox {
+
+}
+
+.studentNameBox {
+
+}
+
+.studentName {
+    text-align: center;
+}
+
+.studentPDBox {
+    width: 80%;
+    padding-left: 80px;
+}
+
+.studentProDesc {
+
+}
