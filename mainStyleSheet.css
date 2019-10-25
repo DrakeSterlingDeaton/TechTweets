@@ -66,6 +66,15 @@ footer ul li, h3 {
     padding: 7px 5px;
 }
 
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer ul li a:hover{
+    text-decoration: underline;
+}
+
 footer .footender li {
     display: inline-block;
     float: left;
