@@ -1,3 +1,9 @@
+/*Set font for entier site */
+html {
+    font-family: 'Libre Franklin', 'sans-serif';
+}
+
+
 /*Cardiff logo in the navBar*/
 img {
     height: 70px;
