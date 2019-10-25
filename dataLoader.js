@@ -10,7 +10,7 @@ for(var j = 0; j < length; j++){
     var studentName = document.createElement("p");
     studentName.innerHTML = data[j].name;
     var link = document.createElement("a");
-    link.setAttribute("href", data[j].link);
+    link.href = data[j].link;
     link.innerHTML = "Show me the project";
 
 
