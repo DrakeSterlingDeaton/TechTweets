@@ -7,7 +7,7 @@ img {
 
 /*NavBar controls*/
 nav {
-    background-color:black;
+    background-color: #22211f;
     height: 110px;
     width: 100%;
     display: flex;
@@ -43,3 +43,24 @@ main {
     padding-top: 110px;
 }
 
+/* Footer Controller */
+footer {
+    background-color: #22211f;
+}
+
+footer ul {
+    list-style-type: none;
+    color: white;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+footer ul li, h3 {
+    padding: 14px 16px;
+}
+
+footer .footender li {
+    display: inline-block;
+    float: left;
+    padding: 14px 16px;
+}
