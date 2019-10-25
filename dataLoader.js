@@ -13,8 +13,8 @@ for(var j = 0; j < length; j++){
     link.setAttribute("href", data[j].link);
     link.innerHTML = "Show me the project";
 
+
     main.appendChild(projectTitle);
     main.appendChild(studentName);
     main.appendChild(link);
 }
-
