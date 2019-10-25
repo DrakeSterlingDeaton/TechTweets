@@ -1,4 +1,4 @@
-var data = [
+data = [
     {
         "name": "John Smtih",
         "projectTitle": "Index",
@@ -9,4 +9,4 @@ var data = [
         "projectTitle": "Firebolt",
         "link": "/mscProject/Harry_Potter/index.html"
     }
-]
+];
