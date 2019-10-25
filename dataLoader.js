@@ -1,6 +1,6 @@
 console.log(data);
 
-var length = data.length();
+var length = data.length;
 
 var main = document.getElementsByTagName("main")[0];
 
