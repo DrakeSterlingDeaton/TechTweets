@@ -92,10 +92,6 @@ footer ul li a {
 footer ul li a:hover{
     text-decoration: underline;
 }
-/*Fixes isseus with bottom navigation menu alignment */
-footer .footender {
-    width: 100%;
-}
 
 footer .footender li {
     display: inline-block;
