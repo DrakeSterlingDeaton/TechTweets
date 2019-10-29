@@ -112,3 +112,88 @@ footer .sponsorImages #QAAImage {
     width: 135px;
 
 }
+
+/* MAIN BODY STYLING */
+
+
+main {
+
+
+}
+
+h1 {
+    font-size: 48px;
+    padding-left: 47px;
+    margin: 48px 0 10px 0;
+}
+
+#introduction {
+    padding-left: 47px;
+    margin-bottom: 50px;
+}
+
+#projectsOuterBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.projectsInnerBox {
+    background-color: green;
+    width: 75%;
+}
+
+.studentNameBox {
+
+}
+
+.studentName {
+    font-size: 36px;
+    margin: 0;
+    /*background-color: black; */
+}
+
+.studentProTitleBox {
+    background-color: blue;
+    height: 100px;
+}
+
+.studentProTitle {
+    margin: 3px;
+    font-size: 24px;
+}
+
+.studentLinkBox {
+    background-color: grey;
+    height: 100px;
+}
+
+.studentProjectLink {
+    all: unset;
+}
+
+.studentPDBox {
+    background-color: red;
+    height: 100px;
+}
+
+.studentProDesc {
+    margin: 0;
+}
+
+/*
+<div class="projectsInnerBox"> <!-- THESE INNER BOXES WILL BE DYNAMICALLY GENERATED -->
+    <div class="studentNameBox">
+        <p class="studentName">John Johnston</p>
+    </div>
+<div class="studentProTitleBox">
+<a class="studentProTitle"></a>
+</div>
+<div class="studentLinkBox">
+<a class="studentProjectLink"></a>
+</div>
+<div class="studentPDBox">
+<p class="studentProDesc"></p>
+</div>
+</div>
+ */
