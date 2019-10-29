@@ -19,9 +19,7 @@ var main = document.getElementsByTagName("main")[0];
 //     main.appendChild(link);
 // }
 
-var projectsOuterBox = document.createElement("div");
-projectsOuterBox.setAttribute("class", "projectsOuterBox");
-
+var projectsOuterBox = document.getElementById("projectsOuterBox");
 
 for(var j = 0; j < length; j++){    
 
