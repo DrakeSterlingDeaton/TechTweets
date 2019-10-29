@@ -5,7 +5,7 @@ var length = data.length;
 var main = document.getElementsByTagName("main")[0];
 
 for(var j = 0; j < length; j++){
-    var projectTitle = document.createElement("h1");
+    var projectTitle = document.createElement("h1");    
     projectTitle.innerHTML = data[j].projectTitle;
     var studentName = document.createElement("p");
     studentName.innerHTML = data[j].name;
