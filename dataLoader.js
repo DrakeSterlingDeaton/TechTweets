@@ -26,17 +26,17 @@ for(var j = 0; j < length; j++){
     var projectsInnerBox = document.createElement("div");
     projectsInnerBox.setAttribute("class", "projectsInnerBox");
 
-    var studentNameBox = document.createElement("div");
-    studentNameBox.setAttribute("class", "studentNameBox");
-
-    var studentName = document.createElement("p");
-    studentName.setAttribute("class", "studentName");
-
     var studentProTitleBox = document.createElement("div");
     studentProTitleBox.setAttribute("class", "studentProTitleBox");
 
     var studentProTitle = document.createElement("p");
     studentProTitle.setAttribute("class", "studentProTitle");
+    
+    var studentNameBox = document.createElement("div");
+    studentNameBox.setAttribute("class", "studentNameBox");
+
+    var studentName = document.createElement("p");
+    studentName.setAttribute("class", "studentName");
 
     var studentLinkBox = document.createElement("div");
     studentLinkBox.setAttribute("class", "studentLinkBox"); 
@@ -61,8 +61,8 @@ for(var j = 0; j < length; j++){
     studentLinkBox.appendChild(studentProjectLink);
     studentPDBox.appendChild(studentProDesc);    
 
-    projectsInnerBox.appendChild(studentNameBox);
     projectsInnerBox.appendChild(studentProTitleBox);
+    projectsInnerBox.appendChild(studentNameBox);
     projectsInnerBox.appendChild(studentLinkBox);
     projectsInnerBox.appendChild(studentPDBox);
     
