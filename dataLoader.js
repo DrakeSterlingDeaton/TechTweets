@@ -31,7 +31,7 @@ for(var j = 0; j < length; j++){
 
     var studentProTitle = document.createElement("p");
     studentProTitle.setAttribute("class", "studentProTitle");
-    
+
     var studentNameBox = document.createElement("div");
     studentNameBox.setAttribute("class", "studentNameBox");
 
@@ -56,13 +56,13 @@ for(var j = 0; j < length; j++){
     studentProjectLink.href = data[j].link;
     studentProDesc.innerHTML = data[j].description;
 
-    studentNameBox.appendChild(studentName);
     studentProTitleBox.appendChild(studentProTitle);
+    studentNameBox.appendChild(studentName);
     studentLinkBox.appendChild(studentProjectLink);
     studentPDBox.appendChild(studentProDesc);    
 
-    projectsInnerBox.appendChild(studentProTitleBox);
     projectsInnerBox.appendChild(studentNameBox);
+    projectsInnerBox.appendChild(studentProTitleBox);
     projectsInnerBox.appendChild(studentLinkBox);
     projectsInnerBox.appendChild(studentPDBox);
     
