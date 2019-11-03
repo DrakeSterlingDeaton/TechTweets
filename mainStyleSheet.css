@@ -203,25 +203,6 @@ h2 {
     margin: 0;
 }
 
-#disLeftLine {
-    background-color: #22211f;
-    height: 100%;
-    width: 15px;
-    position:absolute;
-    top: 26.67px;
-    bottom:0;
-}
-
-#disRightLine {
-    background-color: #22211f;
-    height: 100%;
-    width: 15px;
-    position:absolute;
-    top: 26.67px;
-    bottom:0;
-    right: 0;
-}
-
 /*
 <div class="projectsInnerBox"> <!-- THESE INNER BOXES WILL BE DYNAMICALLY GENERATED -->
     <div class="studentNameBox">
