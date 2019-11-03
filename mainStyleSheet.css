@@ -128,14 +128,21 @@ h1 {
 }
 
 #introduction {
-    padding-left: 47px;
-    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+#introduction p {
+    width: 90%;
+    padding: 5px;
+    background-color: white;
+    margin: 8px 0 8px 0;
 }
 
 h2 {
     font-size: 36px;
     padding-left: 47px;
-    margin: 25px 0 10px 0;
+    margin: 8px 0 10px 0;
 }
 
 #projectsOuterBox {
@@ -161,11 +168,11 @@ h2 {
     margin: 0;
     font-size: 30px;
     background-color: lightgrey;
-    text-decoration: underline;
+    padding: 0 5px 0 5px;
 }
 
 .studentNameBox {
-
+    padding: 0 5px 0 5px;
 }
 
 .studentName {
@@ -176,6 +183,7 @@ h2 {
 
 .studentLinkBox {
     margin-bottom: 8px;
+    padding: 0 5px 0 5px;
 }
 
 .studentProjectLink {
@@ -189,6 +197,7 @@ h2 {
 }
 
 .studentPDBox {
+    padding: 0 5px 0 5px;
 }
 
 .studentProDesc {
