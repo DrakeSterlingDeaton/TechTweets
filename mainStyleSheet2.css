@@ -180,7 +180,7 @@ h2 {
 
 [class^="sProInnerB"] {
     margin-bottom: 20px;
-    max-height: 150px;
+    max-height: 100px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -217,6 +217,7 @@ h2 {
 
 .sProD {
     margin: 0;
+    font-size: 13px;
 }
 
 /*
