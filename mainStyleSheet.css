@@ -202,20 +202,3 @@ h2 {
 .studentProDesc {
     margin: 0;
 }
-
-/*
-<div class="projectsInnerBox"> <!-- THESE INNER BOXES WILL BE DYNAMICALLY GENERATED -->
-    <div class="studentNameBox">
-        <p class="studentName">John Johnston</p>
-    </div>
-<div class="studentProTitleBox">
-<a class="studentProTitle"></a>
-</div>
-<div class="studentLinkBox">
-<a class="studentProjectLink"></a>
-</div>
-<div class="studentPDBox">
-<p class="studentProDesc"></p>
-</div>
-</div>
- */
