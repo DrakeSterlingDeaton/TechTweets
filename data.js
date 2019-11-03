@@ -82,14 +82,14 @@ data = [
         name: "Bob Jones",
         projectTitle: "A Guide to the Paintings of the Romantic Period",
         link: "mscProjects/Bob_Jones/index.html",
-        description: "Adipiscing elit ut aliquam purus sit amet luctus. At erat pellentesque adipiscing commodo. A condimentum vitae sapien pellentesque habitant. Facilisi etiam dignissim diam quis enim. Mauris vitae ultricies leo integer. Pulvinar etiam non quam lacus. Feugiat in ante metus dictum at tempor commodo. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Enim nulla aliquet porttitor lacus."
+        description: "Adipiscing elit ut aliquam purus sit amet luctus. At erat pellentesque adipiscing commodo. A condimentum vitae sapien pellentesque habitant. Facilisi etiam dignissim diam quis enim. Mauris vitae ultricies leo integer. Pulvinar etiam non quam lacus. Feugiat in ante metus dictum at tempor commodo. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Enim nulla aliquet porttitor lacus.",
         projectList: ["A Guide to the Paintings of the Romantic Period", "A Guide to the Paintings of the Impressionist Period"]
     },
     {
         name: "Bob Jones",
         projectTitle: "A Guide to the Paintings of the Impressionist Period",
         link: "mscProjects/Bob_Jones/index.html",
-        description: "Pellentesque adipiscing commodo elit at. Non odio euismod lacinia at quis risus. Dolor morbi non arcu risus quis varius quam quisque id. Arcu odio ut sem nulla pharetra diam sit amet nisl. Blandit massa enim nec dui nunc mattis enim ut. Convallis a cras semper auctor neque vitae tempus quam. Varius morbi enim nunc faucibus a pellentesque sit. Nam aliquam sem et tortor consequat id. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Vitae sapien pellentesque habitant morbi."
+        description: "Pellentesque adipiscing commodo elit at. Non odio euismod lacinia at quis risus. Dolor morbi non arcu risus quis varius quam quisque id. Arcu odio ut sem nulla pharetra diam sit amet nisl. Blandit massa enim nec dui nunc mattis enim ut. Convallis a cras semper auctor neque vitae tempus quam. Varius morbi enim nunc faucibus a pellentesque sit. Nam aliquam sem et tortor consequat id. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Vitae sapien pellentesque habitant morbi.",
         projectList: ["A Guide to the Paintings of the Romantic Period", "A Guide to the Paintings of the Impressionist Period"]
     },
     {
@@ -98,15 +98,15 @@ data = [
         link: "mscProjects/Zefram_Cochrane/index.html",
         description: "Augue mauris augue neque gravida in. Cursus mattis molestie a iaculis at erat pellentesque adipiscing. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Et netus et malesuada fames. Nunc mattis enim ut tellus. Senectus et netus et malesuada. Magna sit amet purus gravida quis blandit turpis cursus. Gravida neque convallis a cras semper auctor neque vitae. Et tortor consequat id porta. Erat nam at lectus urna duis convallis convallis tellus id. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Elit sed vulputate mi sit amet mauris commodo quis imperdiet.",
         projectList: ["Basic Warp Field Theory and the Advancements in FTL Travel"]
-    }
-        {
+    },
+    {
         name: "Zefram Cochrane",
         projectTitle: "Astrology 101",
         link: "mscProjects/Zefram_Cochrane/index.html",
         description: "Orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Sem fringilla ut morbi tincidunt augue interdum velit euismod. A pellentesque sit amet porttitor eget dolor morbi non. Praesent tristique magna sit amet purus. Volutpat consequat mauris nunc congue nisi vitae. Enim ut tellus elementum sagittis vitae. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Ut consequat semper viverra nam libero. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Ac orci phasellus egestas tellus rutrum tellus pellentesque. Erat nam at lectus urna duis convallis convallis. Condimentum vitae sapien pellentesque habitant morbi tristique. Quis vel eros donec ac odio tempor orci. Amet justo donec enim diam vulputate ut pharetra.",
         projectList: ["Basic Warp Field Theory and the Advancements in FTL Travel", "Astrology 101", "Astrology 201"]
-    }
-        {
+    },
+    {
         name: "Zefram Cochrane",
         projectTitle: "Astrology 201",
         link: "mscProjects/Zefram_Cochrane/index.html",
