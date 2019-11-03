@@ -158,8 +158,10 @@ h2 {
 }
 
 .studentProTitle {
-    margin: 3px;
+    margin: 0;
     font-size: 30px;
+    background-color: lightgrey;
+    text-decoration: underline;
 }
 
 .studentNameBox {

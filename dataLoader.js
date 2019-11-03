@@ -61,8 +61,8 @@ for(var j = 0; j < length; j++){
     studentLinkBox.appendChild(studentProjectLink);
     studentPDBox.appendChild(studentProDesc);    
 
-    projectsInnerBox.appendChild(studentNameBox);
     projectsInnerBox.appendChild(studentProTitleBox);
+    projectsInnerBox.appendChild(studentNameBox);
     projectsInnerBox.appendChild(studentLinkBox);
     projectsInnerBox.appendChild(studentPDBox);
     
