@@ -158,9 +158,68 @@ h2 {
     margin: auto;
     height: auto;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
+.studentNameBox {
+    width: 95%;
+    padding: 0 5px 0 5px;
+}
 
+.studentName {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+}
+
+.studentProOuterBox {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+[class^="sProInnerB"] {
+    margin-bottom: 20px;
+    max-height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.sProTBox {
+    background-color: lightgrey;
+    padding: 0 5px 0 5px;
+}
+
+.sProT {
+    margin: 0;
+    font-size: 22px;
+}
+
+.sProLBox {
+    background-color: lightgrey;
+    padding: 0 5px 8px 5px;
+}
+
+.sProL {
+    all: unset;
+    font-style: italic;
+}
+
+.sProL:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sProDBox {
+    background-color: lightgrey;
+    padding: 0 5px 0 5px;
+}
+
+.sProD {
+    margin: 0;
+}
+
+/*
 .studentProTitleBox {
 }
 
@@ -171,14 +230,7 @@ h2 {
     padding: 0 5px 0 5px;
 }
 
-.studentNameBox {
-    padding: 0 5px 0 5px;
-}
 
-.studentName {
-    font-size: 24px;
-    margin: 0;
-}
 
 .studentLinkBox {
     margin-bottom: 8px;
@@ -202,6 +254,7 @@ h2 {
 .studentProDesc {
     margin: 0;
 }
+*/
 
 /*
 <div class="projectsInnerBox"> <!-- THESE INNER BOXES WILL BE DYNAMICALLY GENERATED -->
