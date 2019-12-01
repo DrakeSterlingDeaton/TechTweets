@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Software Engineering Feed</title> 
+  <meta name="author" content="Drake Deaton"> 
+  <meta name="description" content="A website that streams new Software Engineering posts from Twitter bi-hourly."> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta property="og:image" content="https://static.thenounproject.com/png/262131-200.png"> 
+  <meta property="og:description" content="A website that streams new Software Engineering posts from Twitter bi-hourly."> 
+  <meta property="og:title" content="Software Engineering Feed">
+  <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/seo-and-web-glyph-26/64/seo-and-web-glyph-26-09-128.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/headerAndFooter.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="/js/index.js" defer></script>
+  <script type="application/ld+json" defer>
+  {
+   "@context": "http://schema.org",
+   "@type": "Person"
+  }
+  </script>
+ </head> 
+ <body>
+
+ <header th:replace="fragments/header.html :: header"></header>
+
+ <main>
+   <h1>#SoftwareEngineering</h1> 
+   <div id="SEFeed">
+   </div> 
+  </main>
+
+ <footer th:replace="fragments/footer.html :: footer"></footer>
+
+ </body>
+</html>
