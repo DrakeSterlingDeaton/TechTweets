@@ -1,0 +1,189 @@
+/* POSITIONING */
+body {
+    margin: 0;
+}
+
+header {
+    border: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+    min-width: 350px;
+}
+
+nav  {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+}
+
+#navbarLogo,#navbarLogoF {
+    height: 30px;
+    margin: 0 0 0 3px;
+}
+
+#navInfo {
+    margin: 4px 3px 0 0;
+    /* margin-right: 5px; */
+}
+
+#username,#aboutUs {
+    display: inline-block;
+    width: 100%;
+}
+
+main  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+}
+
+h1 {
+    border: 1px solid black;
+    margin: 5px 0 5px 0;
+    width: 75%;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+#SEFeed{
+    width:75%;
+    margin:0 0 5px 0;
+}
+.SEBox{
+    height:auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    position:relative;
+    margin:5px 0 5px 0;
+}
+.SEOuterPicBox{
+    height:60px;
+    width:15%;
+    max-width:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.SEOuterPicBox img{
+    border-radius:50%;
+}
+.SEOuterInfoBox{
+     width:85%;
+     min-width:100px;
+ }
+.OuterUserPostBox{
+    min-height:60px;
+}
+.SEOuterUsernameBox{
+    height:20px;
+    width:100%;
+    display:flex;
+    align-items:center
+}
+.SETweetTextBox{
+    height:auto;
+    width:100%
+}
+
+/*footer  {*/
+/*    height: 60px;*/
+/*    display: flex;*/
+/*    flex-direction: row-reverse;*/
+/*    justify-content: space-between;*/
+/*    min-width: 350px;*/
+/*}*/
+
+/* STYLE */
+
+#navbarLogo,#navbarLogoF {
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#username {
+    font-size: 20px;
+    text-align: right;
+}
+
+
+#aboutUs a {
+    all: unset;
+    float: right;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+.SEBox {
+    /* box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.8); */
+    /* transform: translateY(-100px); */
+}
+
+.username {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.TweetText {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.SEUserCommentsTextBox {
+    font-size: 0.7rem;
+}
+
+.SENewCommentText {
+    border-radius: 2px;
+    resize: none;
+    border: 0.5px solid black;
+    font-size: 0.7rem;
+}
+
+.SENewCommentSubmit {
+    border-radius: 2px;
+    font-size: 0.7rem;
+}
+
+.messageIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.SECommentsNum {
+    font-size: 0.8rem;
+}
+
+.SEInnerUsernameCommentsBox {
+    font-size: 0.8rem;
+}
+
+.SENewCommentsButton:hover,.SEMinimizeCommentsArrow:hover {
+    filter: drop-shadow(0.5px 0.5px 0.5px black);
+    cursor: pointer;
+}
+
+.SENewCommentsButton:focus,.SEMinimizeCommentsArrow:focus {
+    outline: 0;
+}
+
+.SENewCommentsButton:active,.SEMinimizeCommentsArrow:active {
+    filter: none;
+    cursor: unset;
+}
+
+.SEMinimizeCommentsArrow {
+    background-color: transparent;
+}
+.SEOuterInfoBox,.SEOuterPicBox{
+    background-color:#deb887
+}
+
+/* BOX ANIMATIONS */
+

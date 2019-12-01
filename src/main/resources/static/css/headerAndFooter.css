@@ -1,0 +1,47 @@
+/* ////////////// HEADER POSITIONING ////////////// */
+body{
+    margin:0;
+}
+header{
+    border:1px solid #000;
+    border-left: 0;
+    border-right: 0;
+    min-width:350px;
+}
+nav{
+    height:60px;
+    display:flex;
+    justify-content:space-between;
+    background-color:#d3d3d3;
+}
+#navbarLogo,#navbarLogoF{
+    height:30px;
+    margin:0 0 0 3px;
+}#navInfo{
+     margin:4px 3px 0 0;
+ }
+#aboutUs{
+    display:inline-block;
+    width:100%;
+}
+/* ////////////// FOOTER POSITIONING ////////////// */
+footer {
+    height:60px;
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content:space-between;
+    background-color: lightgrey;
+    min-width:350px;
+    width: 100%;
+    border-top:1px solid #000;
+}
+
+#navbarLogo,#navbarLogoF{
+    font-family:monospace;
+    font-size:40px;
+    font-weight:700;
+}
+#aboutUs a {
+    all:unset;
+    float:right;
+}
