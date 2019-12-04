@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.concurrent.Executors; // Inteface used to decouple "task submission from the mechanics of how each task will be run" (from: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html)
 import java.util.concurrent.ScheduledExecutorService; // Interface that can "schedule commands to run after a given delay" (from: https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html)
 
-import org.jsoup.select.Elements;
 import org.springframework.boot.context.event.ApplicationReadyEvent;    // "Event published as late as conceivably possible to indicate that the application is ready to service requests." (from: https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/event/ApplicationReadyEvent.html)
 import org.springframework.context.event.EventListener;     // Used to listen for the Spring Boot 'ApplicationReadyEvent'
 
@@ -22,6 +21,11 @@ import twitter4j.*;                 // Used to fetch & process Tweet data
 import twitter4j.conf.ConfigurationBuilder;    // Used to configure Twitter account authorization so requests for tweets can be made to the Twitter API
 import static twitter4j.Query.ResultType.recent;    // query parameter used when fetching tweets from the Twitter API
 
+import com.fasterxml.jackson.databind.ObjectMapper; // Used to create/append/traverse Json
+import com.fasterxml.jackson.databind.SerializationFeature; // Used to to 'prettify' Json printing
+import com.fasterxml.jackson.databind.node.ArrayNode; // Used to create/append/traverse Json
+import com.fasterxml.jackson.databind.node.ObjectNode; // Used to create/append/traverse Json
+
 import java.io.IOException;         // Used to handle logic errors
 import java.nio.file.Files;         // Used to read, write, and delete files within this project
 import java.nio.file.StandardOpenOption;    // ^^ ^^ ^^
@@ -33,29 +37,32 @@ public class RuntimeThread {
     private LocalDate today;
     private JSONObject twtrData;
     private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-    private File tweetFeedCopy = new File("src/main/resources/static/html/tweetFeedCopy.html");
+    private File staticIndexFile = new File("src/main/resources/static/html/indexCopy.html");
     private File triggerFile = new File("src/main/resources/.restartTriggerFile");
     private HashMap<String, Boolean> tweetDict = new HashMap<>();
-    private File templateIndexFile = new File(getClass().getClassLoader().getResource("templates/fragments/tweetFeed.html").getFile()); // Line of code adapted from "https://stackoverflow.com/questions/29745164/java-io-filenotfoundexception-when-using-jsoup" on Nov 26th 2019
+    private File templateIndexFile = new File(getClass().getClassLoader().getResource("templates/index.html").getFile()); // Line of code adapted from "https://stackoverflow.com/questions/29745164/java-io-filenotfoundexception-when-using-jsoup" on Nov 26th 2019
     private File tweetHTML = new File(getClass().getClassLoader().getResource("static/html/tweetHTML.html").getFile());
+    private File jsonLdSocialMediaPost = new File("src/main/resources/static/js/jsonLdSocialMediaPost.js");
+    private File indexJsonLdFile = new File("src/main/resources/static/js/indexJsonLd.js");
+    private ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
     @EventListener(ApplicationReadyEvent.class)
     public void twitterThread() {
         System.out.println("Beginning thread loop!");
         today = LocalDate.now();
         initTwtrAuth(); // Handles twitter authorzation
-        executor.schedule(threadLoop(), 50, TimeUnit.SECONDS); // Initiates thread loop
+        executor.schedule(threadLoop(), 5, TimeUnit.SECONDS); // Initiates thread loop
     }
 
     private Runnable threadLoop() {
         // Loop actions
         System.out.println("'threadLoop' function called!");
         JSONObject data = getTwitterData();  // fetching twitter data
-        if (data != null) { updateTweetFeedCopyHTML(data); };     // updating HTML scripts
+        if (data != null) { updateIndexHTML(data); };     // updating HTML scripts
         try {
             triggerSpringResourceRefresh();  // forcing Spring Boot to refresh resources. Resources set to refresh when a 'trigger file' is updated. Trigger file is set in the script '.sprint-boot-devtools.properties'. See devtools documentation for more information.)
             assert LocalDate.now().equals(today);   // ensure that loop won't continue overnight if left on.
-            return () -> executor.schedule(threadLoop(), 30, TimeUnit.SECONDS); // initiates another thread after 10 seconds
+            return () -> executor.schedule(threadLoop(), 5, TimeUnit.SECONDS); // initiates another thread after 10 seconds
         } catch (Exception e) {
             return () -> executor.shutdown();
         }
@@ -133,10 +140,12 @@ public class RuntimeThread {
 
 //////////////////////////// HTML CREATION METHODS ////////////////////////////
 
-    private void updateTweetFeedCopyHTML(JSONObject twitterData) {
+    private void updateIndexHTML(JSONObject twitterData) {
         try {
             Element newTweetBox = formatNewTweetBox(twitterData);
             addHTMLtoTweetFeedFiles(newTweetBox);
+            ObjectNode newTweetJsonLd = formatNewJsonLdObj();
+            addJsonLdToIndexJSFile(newTweetJsonLd);
         } catch (Exception e) { e.printStackTrace(); }
     }
 
@@ -156,6 +165,12 @@ public class RuntimeThread {
             tweetText.empty().appendText(twtrData.getString("TweetTxt")); // Using Twitter data to update innerHTML
             usrPic.attr("src", twtrData.getString("UsrProfileImageURL")); // Using Twitter data to update IMG tag src attribute
 
+            // Adding optional tweet data (some tweets from the Twitter API don't have this data associated with them, such as a user HREF♦)
+            try {
+                Element usernameLink = tweetBox.getElementsByClass("usernameLink").get(0); // Select element to add link to user's Twitter page to
+                usernameLink.attr("href", twtrData.getString("UsrURL")); // Using Twitter data to update A tag href attribute
+            } catch (JSONException e) { System.out.println("No link associated with this username"); }
+
             return tweetBox;
         } catch (Exception e) {
             e.printStackTrace();
@@ -164,13 +179,13 @@ public class RuntimeThread {
     }
 
     private void addHTMLtoTweetFeedFiles(Element newTweetBox) throws IOException {
-        Document indexHTML = Jsoup.parse(tweetFeedCopy,  "utf-8"); // Using path to file to create copy of HTML file that's traversable in Java
+        Document indexHTML = Jsoup.parse(staticIndexFile,  "utf-8"); // Using path to file to create copy of HTML file that's traversable in Java
         Element feed = indexHTML.getElementById("SEFeed");  // Finding the feed div
         newTweetBox.appendTo(feed);     // appending 'newTweetBox' child div to end of feed parent div
 
         // Replacing static tweet feed HTML file with new version
-        Files.delete(tweetFeedCopy.toPath());
-        Files.write(tweetFeedCopy.toPath(), indexHTML.toString().getBytes(), StandardOpenOption.WRITE, StandardOpenOption.CREATE);   //StandardCharsets.UTF_8
+        Files.delete(staticIndexFile.toPath());
+        Files.write(staticIndexFile.toPath(), indexHTML.toString().getBytes(), StandardOpenOption.WRITE, StandardOpenOption.CREATE);   //StandardCharsets.UTF_8
         System.out.println("Added new tweet HTML to static HTML");
 
         // Replacing TEMPLATE HTML file with new version
@@ -179,9 +194,47 @@ public class RuntimeThread {
         System.out.println("Added new tweet HTML to template HTML");
     }
 
+    private ObjectNode formatNewJsonLdObj() throws IOException, JSONException {
+
+        // Identifying JSON LD objects
+        ObjectNode socialMediaPost = (ObjectNode) objectMapper.readTree(jsonLdSocialMediaPost);
+        ObjectNode author = (ObjectNode) socialMediaPost.get("author");
+        ObjectNode comment = (ObjectNode) socialMediaPost.get("comment");
+
+        // Adding JSON LD fields
+        author.put("name", twtrData.getString("UsrName"));
+        author.put("image", twtrData.getString("UsrProfileImageURL"));
+        comment.put("text", twtrData.getString("TweetTxt"));
+
+        // Add Option JSON LD fields
+        try { author.put("sameAs", twtrData.getString("UsrURL"));
+        } catch (Exception e) { System.out.println("No link available. Skipping link"); }
+
+        // Returning JSON LD for new social media post
+        System.out.println("Creating JSON LD for new tweet...");
+        return socialMediaPost;
+    }
+
+    private void addJsonLdToIndexJSFile(ObjectNode socialMediaPost) throws IOException {
+        ObjectNode indexJsonLd = (ObjectNode) objectMapper.readTree(indexJsonLdFile);
+
+        // Adding new JSONLD obj to JSONLD Arr
+        ArrayNode indexJsonLdArr = (ArrayNode) indexJsonLd.get("itemListElement");  // Identify Node Arr
+        socialMediaPost.put("position", indexJsonLdArr.size()+1); // Adding the position within the Arr to the new node to be appended to the end of the arr
+        indexJsonLdArr.add(socialMediaPost);    // Appending new node to end of Arr
+        indexJsonLd.put("numberOfItems", indexJsonLdArr.size());  // Updating total length of Arr
+
+        // Rewritting JSONLD file
+        Files.delete(indexJsonLdFile.toPath());
+        Files.write(indexJsonLdFile.toPath(), objectMapper.writeValueAsString(indexJsonLd).getBytes(),
+                    StandardOpenOption.WRITE, StandardOpenOption.CREATE);   //StandardCharsets.UTF_8
+        System.out.println("Added new Json LD data to indexJsonLd file");
+    }
+
     private void triggerSpringResourceRefresh() throws IOException {
-        Files.write(triggerFile.toPath(), "X".getBytes(), StandardOpenOption.APPEND);   //StandardCharsets.UTF_8
-        System.out.println("Refresh triggered");
+        Files.write(triggerFile.toPath(), "".getBytes(), StandardOpenOption.APPEND);   //StandardCharsets.UTF_8
+        System.out.println("Static resources refresh triggered");
+        System.out.println("Awaiting next threadLoop...");
         System.out.println("");
     }
 

@@ -16,4 +16,5 @@ public class MainController {
     public ModelAndView greetingResponse(){
         return new ModelAndView("index.html");
     }
+
 }

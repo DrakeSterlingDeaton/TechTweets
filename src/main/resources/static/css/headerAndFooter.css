@@ -3,7 +3,7 @@ body{
     margin:0;
 }
 header{
-    border:1px solid #000;
+    border-bottom:1px solid grey;
     border-left: 0;
     border-right: 0;
     min-width:350px;
@@ -33,7 +33,7 @@ footer {
     background-color: lightgrey;
     min-width:350px;
     width: 100%;
-    border-top:1px solid #000;
+    border-top:1px solid grey;
 }
 
 #navbarLogo,#navbarLogoF{

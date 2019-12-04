@@ -23,18 +23,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
-    implementation 'com.google.code.gson:gson:2.8.6'
-
+    
     compile group: 'org.jsoup', name: 'jsoup', version: '1.12.1'
-
-    compile 'org.json:json:20190722'
-
+    
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.2.1.RELEASE', ext: 'pom'
-
-    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
-
-//    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+    
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 
     implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.1'
 
