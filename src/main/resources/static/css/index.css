@@ -19,9 +19,9 @@ main{
     min-width:350px;
 }
 h1{
-    border:1px solid #000;
     margin:5px 0 5px 0;
     width:50%;
+    font-size: 32px;
 }
 #SEFeed{
     width:60%;
@@ -36,7 +36,6 @@ h1{
     position:relative;
 }
 .SEOuterPicBox{
-    height:60px;
     width:15%;
     max-width:60px;
     display:flex;
@@ -47,7 +46,7 @@ h1{
     border-radius:50%;
 }
 .SEOuterInfoBox{
-    width:85%;
+    width:84%;
     min-width:100px
 }
 .OuterUserPostBox{

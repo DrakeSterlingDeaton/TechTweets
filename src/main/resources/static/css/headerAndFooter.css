@@ -14,18 +14,12 @@ nav{
     justify-content:space-between;
     background-color:#d3d3d3;
 }
-#navbarLogo,#navbarLogoF{
-    height:30px;
-    margin:0 0 0 3px;
-}#navInfo{
-     margin:4px 3px 0 0;
- }
-#aboutUs{
-    display:inline-block;
-    width:100%;
+#navbarLogo,#navbarLogoF {
+    height: 30px;
+    margin: 0 0 0 3px;
 }
 /* ////////////// FOOTER POSITIONING ////////////// */
-footer {
+footer{
     height:60px;
     display:flex;
     flex-direction:row-reverse;
@@ -35,13 +29,8 @@ footer {
     width: 100%;
     border-top:1px solid grey;
 }
-
 #navbarLogo,#navbarLogoF{
     font-family:monospace;
     font-size:40px;
     font-weight:700;
-}
-#aboutUs a {
-    all:unset;
-    float:right;
 }

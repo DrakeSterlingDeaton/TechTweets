@@ -62,7 +62,7 @@ public class RuntimeThread {
         try {
             triggerSpringResourceRefresh();  // forcing Spring Boot to refresh resources. Resources set to refresh when a 'trigger file' is updated. Trigger file is set in the script '.sprint-boot-devtools.properties'. See devtools documentation for more information.)
             assert LocalDate.now().equals(today);   // ensure that loop won't continue overnight if left on.
-            return () -> executor.schedule(threadLoop(), 5, TimeUnit.SECONDS); // initiates another thread after 10 seconds
+            return () -> executor.schedule(threadLoop(), 3, TimeUnit.SECONDS); // initiates another thread after 10 seconds
         } catch (Exception e) {
             return () -> executor.shutdown();
         }
@@ -239,3 +239,4 @@ public class RuntimeThread {
     }
 
 }
+

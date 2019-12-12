@@ -70,7 +70,7 @@
     },
     "comment" : {
       "@type" : "Comment",
-      "text" : "Tally Ali says - \"With the last day to register for VAT round the corner, why wait?\"\n\nSo, try Tally today -â€¦ https://t.co/5uW9swrkyu"
+      "text" : "Tally Ali says - \"With the last day to register for VAT round the corner, why wait?\"\n\nSo, try Tally today -… https://t.co/5uW9swrkyu"
     },
     "position" : 5,
     "url" : "https://localhost:8080/"
@@ -84,7 +84,7 @@
     },
     "comment" : {
       "@type" : "Comment",
-      "text" : "Customer Service Software Marketâ€“ A comprehensive study by Key Players Freshdesk, Salesforce, Oracleâ€¦ https://t.co/PMZrl5t3Po"
+      "text" : "Customer Service Software Market– A comprehensive study by Key Players Freshdesk, Salesforce, Oracle… https://t.co/PMZrl5t3Po"
     },
     "position" : 6,
     "url" : "https://localhost:8080/"
@@ -98,7 +98,7 @@
     },
     "comment" : {
       "@type" : "Comment",
-      "text" : "We are #hiring innovative R&D Software Developers for our growing office space in Galway, Ireland! Come join us & bâ€¦ https://t.co/SHMqLxX9cK"
+      "text" : "We are #hiring innovative R&D Software Developers for our growing office space in Galway, Ireland! Come join us & b… https://t.co/SHMqLxX9cK"
     },
     "position" : 7,
     "url" : "https://localhost:8080/"
@@ -111,7 +111,7 @@
     },
     "comment" : {
       "@type" : "Comment",
-      "text" : "Join us to find out what's new in the latest Vectorworks 2020 software over festive drinks and nibbles! Tickets avaâ€¦ https://t.co/ntz1tfsbzF"
+      "text" : "Join us to find out what's new in the latest Vectorworks 2020 software over festive drinks and nibbles! Tickets ava… https://t.co/ntz1tfsbzF"
     },
     "position" : 8,
     "url" : "https://localhost:8080/"
@@ -129,6 +129,20 @@
     },
     "position" : 9,
     "url" : "https://localhost:8080/"
+  }, {
+    "@type" : "SocialMediaPosting",
+    "author" : {
+      "@type" : "Person",
+      "name" : "Enlighten_News",
+      "image" : "https://pbs.twimg.com/profile_images/661200410493894656/TruFfJ_Y_normal.jpg",
+      "sameAs" : "http://t.co/JT8abpDLYV"
+    },
+    "comment" : {
+      "@type" : "Comment",
+      "text" : "Is your business using software to record client information and opportunities? If not you might be interested in… https://t.co/wg5YRA16oa"
+    },
+    "position" : 10,
+    "url" : "https://localhost:8080/"
   } ],
-  "numberOfItems" : 9
+  "numberOfItems" : 10
 }
