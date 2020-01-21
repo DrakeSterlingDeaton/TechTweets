@@ -1,6 +1,7 @@
 package website;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executors; // Inteface used to decouple "task submission from the mechanics of how each task will be run" (from: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html)
 import java.util.concurrent.ScheduledExecutorService; // Interface that can "schedule commands to run after a given delay" (from: https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html)
 
@@ -30,6 +31,7 @@ import java.io.IOException;         // Used to handle logic errors
 import java.nio.file.Files;         // Used to read, write, and delete files within this project
 import java.nio.file.StandardOpenOption;    // ^^ ^^ ^^
 
+public interface
 @Component
 public class RuntimeThread {
 
@@ -39,7 +41,7 @@ public class RuntimeThread {
     private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
     private File staticIndexFile = new File("src/main/resources/static/html/indexCopy.html");
     private File triggerFile = new File("src/main/resources/.restartTriggerFile");
-    private HashMap<String, Boolean> tweetDict = new HashMap<>();
+    private Map<String, Boolean> tweetDict = new HashMap<>();
     private File templateIndexFile = new File(getClass().getClassLoader().getResource("templates/index.html").getFile()); // Line of code adapted from "https://stackoverflow.com/questions/29745164/java-io-filenotfoundexception-when-using-jsoup" on Nov 26th 2019
     private File tweetHTML = new File(getClass().getClassLoader().getResource("static/html/tweetHTML.html").getFile());
     private File jsonLdSocialMediaPost = new File("src/main/resources/static/js/jsonLdSocialMediaPost.js");
@@ -55,13 +57,10 @@ public class RuntimeThread {
     }
 
     private Runnable threadLoop() {
-        // Loop actions
-        System.out.println("'threadLoop' function called!");
         JSONObject data = getTwitterData();  // fetching twitter data
-        if (data != null) { updateIndexHTML(data); };     // updating HTML scripts
+        if (data != null) { updateIndexHTML(data); };     // updating scripts
         try {
             triggerSpringResourceRefresh();  // forcing Spring Boot to refresh resources. Resources set to refresh when a 'trigger file' is updated. Trigger file is set in the script '.sprint-boot-devtools.properties'. See devtools documentation for more information.)
-            assert LocalDate.now().equals(today);   // ensure that loop won't continue overnight if left on.
             return () -> executor.schedule(threadLoop(), 3, TimeUnit.SECONDS); // initiates another thread after 10 seconds
         } catch (Exception e) {
             return () -> executor.shutdown();
@@ -73,10 +72,10 @@ public class RuntimeThread {
     private void initTwtrAuth() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("cWHDt41fqYOOpjsEABq2MYRDo")
-                .setOAuthConsumerSecret("lbSv0gH0lZdPVkjI0iH8hk75ZMRWWmyK11ALbCRoi0z3LePqB5")
-                .setOAuthAccessToken("800761746948358144-cQPIRAeG3Zaw4An3nlWqY4xy9xUrLmZ")
-                .setOAuthAccessTokenSecret("zlFzsNpfiajdAkuXSXAoAQwwA8MK17p5S0Q1EHwn0TI5Q");
+                .setOAuthConsumerKey("*************************")
+                .setOAuthConsumerSecret("**********************************************")
+                .setOAuthAccessToken("****************************************************")
+                .setOAuthAccessTokenSecret("********************************************");
         TwitterFactory tf = new TwitterFactory(cb.build());
         twitter = tf.getInstance();
     }
